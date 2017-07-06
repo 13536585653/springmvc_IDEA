@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd
+">
+
+    <!--配置handler-->
+        <bean id="itemController1" name="/queryUsers.action" class="org.springmvc.ssm.controller.ItemController1"/>
+        <bean id="itemController2" class="org.springmvc.ssm.controller.ItemController2"/>
+    <!--非注解简单url映射-->
+        <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+            <property name="mappings">
+                <props>
+                    <!--对itemsController进行url映射，url是/queryUsers.action-->
+                    <prop key="/queryUsers1.action">itemController1</prop>
+                    <prop key="/queryUsers2.action">itemController2</prop>
+                </props>
+            </property>
+        </bean>
+    <!--处理器映射器-->
+        <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <!--处理器适配器，所有处理器适配器都实现了HandlerAdapter接口-->
+        <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <!--另一个非注解适配器-->
+        <bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>
+    <!--视图解析器-->
+        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"/>
+</beans>

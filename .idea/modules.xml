@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC博客管理系统/example.iml" filepath="$PROJECT_DIR$/SpringMVC博客管理系统/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myspringmvc/myspringmvc.iml" filepath="$PROJECT_DIR$/myspringmvc/myspringmvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myspringmvc2/myspringmvc2.iml" filepath="$PROJECT_DIR$/myspringmvc2/myspringmvc2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/myspringmvc3/myspringmvc3.iml" filepath="$PROJECT_DIR$/myspringmvc3/myspringmvc3.iml" />
+    </modules>
+  </component>
+</project>
